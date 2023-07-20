@@ -1,0 +1,48 @@
+.parent {
+    width: 100vw;
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box1 {
+    width: 20%;
+    height: 100%;
+    background-color: blanchedalmond;
+}
+
+.heading {
+    width: 100%;
+    height: 20%;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heading h1 {
+    font-size: 70px;
+    text-decoration: underline solid palevioletred;
+}
+
+.menu {
+    width: 100%;
+    height: 80%;
+    background-color: palegreen;
+    padding:30px;
+
+}
+.menu h3{
+    margin-bottom: 20px;
+}
+
+.box2 {
+    width: 80%;
+    height: 100%;
+    background-color: gold;
+}
+button{
+    margin: 50px;
+}
