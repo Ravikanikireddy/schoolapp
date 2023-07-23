@@ -26,7 +26,7 @@ export class LoginComponent {
             localStorage.setItem('token',data.token);
           },
           (err:any)=>{
-            alert("Login Failed")
+            alert("Login Failed");
           }
         )
   }

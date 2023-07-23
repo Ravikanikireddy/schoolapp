@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 import { bindNodeCallback } from 'rxjs';
 import { StudentService } from '../student.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-create-student',
@@ -49,7 +50,22 @@ export class CreateStudentComponent {
   deletemark(i:number){
     this.marksFormArray.removeAt(i);
   }
-  constructor(private studentService:StudentService){}
+  
+  public id:any = "";
+
+  constructor(private studentService:StudentService ,private activatedRoute:ActivatedRoute) {
+    activatedRoute.params.subscribe(
+      (data:any)=>{
+        this.id = data.id;
+
+        studentService.getContent(this.id).subscribe(
+          (data:any)=>{
+            this.studentForm.patchValue(data);
+          }
+        )
+      }
+    )
+   }
   submit(){
     console.log(this.studentForm);
     this.studentService.createContents(this.studentForm.value).subscribe(
