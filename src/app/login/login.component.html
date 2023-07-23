@@ -1,20 +1,21 @@
 <div class="parent">
     <div class="box">
           <div class="child1">
-            <h1>School Application Login</h1>
+            <h1>Student Login</h1>
           </div>
              
           <div class="child2">
-            <form>
+            <form [formGroup]="loginForm">
             <label>Email:</label>
-            <input type="text" placeholder="Enter Your Email">
+            <input type="text" placeholder="Enter Your Email" formControlName="email">
             <br><br>
 
             <label>password:</label>
-            <input type="text" placeholder="Enter Your Password">
+            <input type="text" placeholder="Enter Your Password" formControlName="password">
             <br><br>
             
-            <button routerLink="/dashboard" class="btn btn-warning">Submit</button>
+            <button  class="btn btn-warning" (click)="login()">Submit</button><br>
+            <a href="" routerlink="/login"><span>Forgotten password?</span></a>
         </form>
       </div> 
     </div>

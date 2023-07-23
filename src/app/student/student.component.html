@@ -1,0 +1,96 @@
+<div class="parent">
+    <div class="child">
+        <h1 >Student</h1>
+        <label>Filter::</label>
+        <input type="text" [(ngModel)]="term" (keyup)="getFilteredContents()">
+        <label for="">column::</label>
+        <select [(ngModel)]="column">
+            <option value="">Select column</option>
+           <option>createdAt</option>
+            <option>name</option>
+            <option>email</option>
+            <option>password</option>
+        </select>
+        <label for="">Order::</label>
+        <select [(ngModel)]="order">
+            <option value="">Select Order</option>
+            <option>asc</option>
+            <option>desc</option>
+        </select>
+        <button (click)="getSortedContents()">Sort</button><br>
+        <label for="">Limit::</label>
+        <select [(ngModel)]="limit">
+            <option value="">Select Limit</option>
+            <option>5</option>
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+        </select>
+        <label for="">Page::</label>
+        <select [(ngModel)]="page">
+            <option value="">Select Page</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+        <button (click)="getPageContents()">Pagination</button>
+        <table class="table table-success">
+            <thead>
+                <tr>
+                    <th>Sl.No.</th>
+                    <th>CreatedAt</th>
+                    <th>Name</th>
+                    <th>Male</th>
+                    <th>Female</th>
+                    <th>Avatar</th>
+                    <th>Percentage</th>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Fathername</th>
+                    <th>Address-Line</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>pincode</th>
+                    <th>D.O.B.</th>
+                    <th>Dayscholor/Resedential</th>
+                    <th>Bus Fee</th>
+                    <th>Hostel Fee</th>
+                    
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let content of contents let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{content.createdAt}}</td>
+                    <td>{{content.name}}</td>
+                    <td>{{content.male}}</td>
+                    <td>{{content.female}}</td>
+                    <td>
+                        <img src="{{content.avatar}}" height=" 70px" weight="70px">
+                    </td>
+                    <td>{{content.percentage}}</td>
+                     <td>{{content.id}}</td>
+                    <td>{{content.email}}</td>
+                    <td>{{content.password}}</td>
+                    <td>{{content.fathername}}</td>
+                    <td>{{content.address.addressline}}</td>
+                    <td>{{content.address.city}}</td>
+                    <td>{{content.address.state}}</td>
+                    <td>{{content.address.pincode}}</td>
+                    <td>{{content.dateofbirth}}</td>
+                    <td>{{content.type}}</td>
+                    <td>{{content.busfee}}</td>
+                    <td>{{content.hostelfee}}</td>
+        
+                
+                    <td>
+                        <button class="btn btn-danger" (click)="deleteContents(content.id)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

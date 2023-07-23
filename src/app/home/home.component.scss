@@ -1,0 +1,23 @@
+.parent{
+    width:80vw;
+    height:100vh;
+    background-color: olive;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.child{
+    width:70%;
+    height:70%;
+    background-color: blanchedalmond;
+    padding:25px; 
+    border:20px solid black;
+    border-radius: 25px;
+    box-shadow:30px 30px 20px white;
+}
+h1{
+    text-align: center;
+    color:red;
+    text-decoration: underline solid orange;
+}

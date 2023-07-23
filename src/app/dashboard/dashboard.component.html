@@ -4,10 +4,10 @@
             <h1>School</h1>
         </div>
         <div class="menu">
-            <h3>Home</h3>
-            <h3>Create-Student</h3>
-            <h3>All Students</h3>
-            <button routerLink="/login" class="btn btn-primary">LogOut</button>
+            <h3 routerLink="home">Home</h3>
+            <h3 routerLink="create-student">Create-Student</h3>
+            <h3 routerLink="student">All Students</h3>
+            <button (click)="logout()" class="btn btn-primary">LogOut</button>
         </div>
     </div>
     <div class="box2">
