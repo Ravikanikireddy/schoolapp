@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { StudentService } from '../student.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-student',
@@ -13,7 +14,7 @@ public column:string = "";
 public order:string = "";
 public limit:string = "";
 public page:string = "";
-constructor(private studentService:StudentService){
+constructor(private studentService:StudentService,private router:Router){
   this.studentService.getContents().subscribe(
     (data:any)=>{
       this.contents = data;
@@ -63,5 +64,8 @@ deleteContents(id:any){
       alert("internal server error");
     }
   )
+}
+view(id:number){
+this.router.navigateByUrl("/dashboard/student-details/"+id);
 }
 }
