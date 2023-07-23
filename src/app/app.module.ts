@@ -10,7 +10,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { HomeComponent } from './home/home.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { StudentComponent } from './student/student.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { StudentDetailsComponent } from './student-details/student-details.component'
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http'
     PagenotfoundComponent,
     HomeComponent,
     CreateStudentComponent,
-    StudentComponent
+    StudentComponent,
+    StudentDetailsComponent
   ],
   imports: [
     BrowserModule,
