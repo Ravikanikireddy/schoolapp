@@ -68,4 +68,7 @@ deleteContents(id:any){
 view(id:number){
 this.router.navigateByUrl("/dashboard/student-details/"+id);
 }
+edit(id:number){
+this.router.navigateByUrl("/dashboard/edit-student/"+id);
+}
 }

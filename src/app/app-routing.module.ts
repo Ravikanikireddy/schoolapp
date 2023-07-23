@@ -15,6 +15,7 @@ const routes: Routes = [
   {path:'dashboard',component:DashboardComponent,canActivate:[authenticationGuard],children:[
     {path:'home',component:HomeComponent},
     {path:'create-student',component:CreateStudentComponent,canDeactivate:[notifyGuard]},
+    {path:'edit-student/:id',component:CreateStudentComponent},
     {path:'student',component:StudentComponent},
     {path:'student-details/:id',component:StudentDetailsComponent}
   ]},
