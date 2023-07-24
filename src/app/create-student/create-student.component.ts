@@ -12,32 +12,32 @@ import { ActivatedRoute } from '@angular/router';
 export class CreateStudentComponent {
   public studentForm: FormGroup = new FormGroup({
     createdAt: new FormControl(),
-    name: new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(15)]),
+    name: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(15)]),
     percentage: new FormControl(),
     class: new FormControl(),
-    email: new FormControl('',[Validators.required,Validators.email]),
+    email: new FormControl('', [Validators.required, Validators.email]),
     avatar: new FormControl(),
     password: new FormControl(),
     male: new FormControl(),
-    female:new FormControl(),
+    female: new FormControl(),
     comments: new FormControl(),
     fathername: new FormControl(),
     dateofbirth: new FormControl(),
-    address:new FormGroup({
-      addressline:new FormControl(),
-      city:new FormControl(),
-      state:new FormControl('',[Validators.required,Validators.minLength(3),Validators.maxLength(14)]),
-      pincode:new FormControl('',[Validators.required,Validators.min(100000),Validators.max(999999)])
+    address: new FormGroup({
+      addressline: new FormControl(),
+      city: new FormControl(),
+      state: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(14)]),
+      pincode: new FormControl('', [Validators.required, Validators.min(100000), Validators.max(999999)])
     }),
-    marks:new FormArray([]),
-    type:new FormControl(),
-    busfee:new FormControl(),
-    hostelfee:new FormControl()
+    marks: new FormArray([]),
+    type: new FormControl(),
+    busfee: new FormControl(),
+    hostelfee: new FormControl()
   });
-  get marksFormArray(){
+  get marksFormArray() {
     return this.studentForm.get('marks') as FormArray;
   }
-  addMark(){
+  addMark() {
     this.marksFormArray.push(
       new FormGroup({
         class: new FormControl(),
@@ -47,34 +47,55 @@ export class CreateStudentComponent {
       })
     )
   }
-  deletemark(i:number){
+  deletemark(i: number) {
     this.marksFormArray.removeAt(i);
   }
-  
-  public id:any = "";
 
-  constructor(private studentService:StudentService ,private activatedRoute:ActivatedRoute) {
+  public id: any = "";
+
+  constructor(private studentService: StudentService, private activatedRoute: ActivatedRoute) {
     activatedRoute.params.subscribe(
-      (data:any)=>{
+      (data: any) => {
         this.id = data.id;
 
         studentService.getContent(this.id).subscribe(
-          (data:any)=>{
+          (data: any) => {
             this.studentForm.patchValue(data);
           }
         )
       }
     )
-   }
-  submit(){
-    console.log(this.studentForm);
-    this.studentService.createContents(this.studentForm.value).subscribe(
-      (data:any)=>{
-        alert("Account Created Successfully");
-      },
-      (err:any)=>{
-        alert("Account Creation Failed")
-      }
-    )
   }
+  submit() {
+    console.log(this.studentForm);
+    
+      if(this.id?.length > 0) {
+      // update
+      this.studentService.updateContents(this.id, this.studentForm.value).subscribe(
+        (data: any) => {
+          alert("Account updated Successfully");
+        },
+        (err: any) => {
+          alert("Account updation Failed")
+        }
+      )
+    }
+    else {
+      //  create
+      this.studentService.createContents(this.studentForm.value).subscribe(
+        (data: any) => {
+          alert("Account created successfully")
+        },
+        (err: any) => {
+          alert("Account creation failed");
+        }
+      )
+    }
+    
+  }
+
 }
+
+
+
+
