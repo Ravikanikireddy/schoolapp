@@ -11,7 +11,7 @@
             <option>email</option>
             <option>password</option>
         </select>
-        
+
         <select [(ngModel)]="order">
             <option value="">Select Order</option>
             <option>asc</option>
@@ -26,7 +26,7 @@
             <option>15</option>
             <option>20</option>
         </select>
-    
+
         <select [(ngModel)]="page">
             <option value="">Select Page</option>
             <option>1</option>
@@ -34,6 +34,7 @@
             <option>3</option>
             <option>4</option>
         </select>
+
         <button (click)="getPageContents()">Page</button>
         <table class="table table-bordered  table-warning">
             <thead>
@@ -62,14 +63,14 @@
                     <td>{{content.male}}
                         {{content.female}}
                     </td>
-                        
+
                     <td>
                         <img src="{{content.avatar}}" height=" 70px" weight="70px">
                     </td>
                     <!-- <td [ngStyle]="{color:student.science>=35?'green':'red'}">{{student.science}}</td> -->
                     <td [ngStyle]="{'background-color':content.percentage>=45?'green':'red'}">
                         percentage:{{content.percentage}}
-                         class:{{content.class}}
+                        class:{{content.class}}
                         year:{{content.year}}
                     </td>
                     <td>{{content.id}}</td>
@@ -83,8 +84,9 @@
                     </td>
                     <td>{{content.dateofbirth | date:'dd-MM-yyyy'}}</td>
                     <td><span>Type:</span>{{content.type}}
-                      <span>BusFee:</span>{{content.busfee}}
-                       <span>HostelFee:</span>{{content.hostelfee}}</td>
+                        <span>BusFee:</span>{{content.busfee}}
+                        <span>HostelFee:</span>{{content.hostelfee}}
+                    </td>
 
 
                     <td>
