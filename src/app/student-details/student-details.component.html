@@ -20,5 +20,9 @@
 <h5>Dayscholor/Resedential:{{content.type}}</h5>
 <h5>Bus Fee:{{content.busfee}}</h5>
 <h5>Hostel Fee:{{content.hostelfee}}</h5>
+
+<p *ngFor="let mark of content.marks">{{mark | json}}</p>
+
 </div>
 </div>
+

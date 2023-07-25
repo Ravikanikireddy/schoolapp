@@ -76,10 +76,10 @@
                     <td>{{content.email}}</td>
                     <td>{{content.password}}</td>
                     <td>{{content.fatherName}}</td>
-                    <td>{{content.address.addressline}}
-                        {{content.address.city}}
-                        {{content.address.state}}
-                        {{content.address.pincode}}
+                    <td>{{content.address?.addressline}}
+                        {{content.address?.city}}
+                        {{content.address?.state}}
+                        {{content.address?.pincode}}
                     </td>
                     <td>{{content.dateofbirth | date:'dd-MM-yyyy'}}</td>
                     <td><span>Type:</span>{{content.type}}
