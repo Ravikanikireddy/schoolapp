@@ -21,7 +21,8 @@ export class CreateStudentComponent {
     male: new FormControl(),
     female: new FormControl(),
     comments: new FormControl(),
-    fathername: new FormControl(),
+    fatherName: new FormControl(),
+    year:new FormControl(),
     dateofbirth: new FormControl(),
     address: new FormGroup({
       addressline: new FormControl(),

@@ -26,10 +26,10 @@ export class StudentService {
     return this.httpClient.get("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students?limit=" + limit + "&page=" + page)
   }
   createContents(data: any): Observable<any> {
-    return this.httpClient.post("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students", data)
+    return this.httpClient.post("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students", data);
   }
   updateContents(id: any, data: any): Observable<any> {
-    return this.httpClient.put("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students/" + id, data)
+    return this.httpClient.put("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students/" + id, data);
   }
   deleteContents(id: any): Observable<any> {
     return this.httpClient.delete("https://64b8a34b21b9aa6eb07a012b.mockapi.io/api/students-mini/students/" + id)

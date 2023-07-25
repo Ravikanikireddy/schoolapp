@@ -27,6 +27,10 @@
             <input type="number" formControlName="percentage">
             <br>
 
+            <label>Year:</label>
+            <input type="number" formControlName="year">
+            <br>
+
             <label>class:</label>
             <input type="number" formControlName="class">
             <br>
@@ -34,7 +38,8 @@
             <label>Email:</label>
             <input type="email" formControlName="email">
 
-            <div class="text text-danger" *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched">
+            <div class="text text-danger"
+                *ngIf="studentForm.get('email')?.invalid && studentForm.get('email')?.touched">
                 <p *ngIf="studentForm.get('email')?.errors?.['required']">This is Reqired</p>
                 <p *ngIf="studentForm.get('email')?.errors?.['email']">Email is required</p>
 
@@ -46,14 +51,14 @@
             <input type="text" formControlName="password">
             <br>
 
-            
-                <label>Gender:</label>
-                <input type="radio" id="type" name="gender" formControlName="male" value="male">
-                <label for="type">Male</label>
-                <input type="radio" id="female" name="gender" formControlName="female" value="female">
-                <label for="female">Female</label>
 
-                <!-- <div *ngIf="studentForm.get('gender')?.value=='male'">
+            <label>Gender:</label>
+            <input type="radio" id="type" name="gender" formControlName="male" value="male">
+            <label for="type">Male</label>
+            <input type="radio" id="female" name="gender" formControlName="female" value="female">
+            <label for="female">Female</label>
+
+            <!-- <div *ngIf="studentForm.get('gender')?.value=='male'">
 
                 </div>
              -->
@@ -67,7 +72,7 @@
             </div>
 
             <label>FatherName:</label>
-            <input type="text" formControlName="fathername">
+            <input type="text" formControlName="fatherName">
             <br>
 
             <label>Date Of Birth:</label>

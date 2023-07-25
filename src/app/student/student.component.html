@@ -1,24 +1,24 @@
 <div class="parent">
     <div class="child">
-        <h1 >Student</h1>
+        <h1>Student</h1>
         <label>Filter::</label>
         <input type="text" [(ngModel)]="term" (keyup)="getFilteredContents()">
-        <label for="">column::</label>
+        <label for="">Sorting::</label>
         <select [(ngModel)]="column">
             <option value="">Select column</option>
-           <option>createdAt</option>
+            <option>createdAt</option>
             <option>name</option>
             <option>email</option>
             <option>password</option>
         </select>
-        <label for="">Order::</label>
+        
         <select [(ngModel)]="order">
             <option value="">Select Order</option>
             <option>asc</option>
             <option>desc</option>
         </select>
-        <button (click)="getSortedContents()">Sort</button><br>
-        <label for="">Limit::</label>
+        <button (click)="getSortedContents()">Sort</button>
+        <label for="">Pagination::</label>
         <select [(ngModel)]="limit">
             <option value="">Select Limit</option>
             <option>5</option>
@@ -26,7 +26,7 @@
             <option>15</option>
             <option>20</option>
         </select>
-        <label for="">Page::</label>
+    
         <select [(ngModel)]="page">
             <option value="">Select Page</option>
             <option>1</option>
@@ -34,30 +34,23 @@
             <option>3</option>
             <option>4</option>
         </select>
-        <button (click)="getPageContents()">Pagination</button>
-        <table class="table table-bordered table-warning">
+        <button (click)="getPageContents()">Page</button>
+        <table class="table table-bordered  table-warning">
             <thead>
                 <tr>
                     <th>Sl.No.</th>
                     <th>CreatedAt</th>
                     <th>Name</th>
-                    <th>Male</th>
-                    <th>Female</th>
+                    <th>gender</th>
                     <th>Avatar</th>
-                    <th>Percentage</th>
+                    <th>Marks</th>
                     <th>ID</th>
                     <th>Email</th>
                     <th>Password</th>
                     <th>Fathername</th>
-                    <th>Address-Line</th>
-                    <th>City</th>
-                    <th>State</th>
-                    <th>pincode</th>
+                    <th>Address</th>
                     <th>D.O.B.</th>
                     <th>Dayscholor/Resedential</th>
-                    <th>Bus Fee</th>
-                    <th>Hostel Fee</th>
-                    
                     <th>Delete</th>
                 </tr>
             </thead>
@@ -66,27 +59,34 @@
                     <td>{{i+1}}</td>
                     <td>{{content.createdAt}}</td>
                     <td>{{content.name}}</td>
-                    <td>{{content.male}}</td>
-                    <td>{{content.female}}</td>
+                    <td>{{content.male}}
+                        {{content.female}}
+                    </td>
+                        
                     <td>
                         <img src="{{content.avatar}}" height=" 70px" weight="70px">
                     </td>
                     <!-- <td [ngStyle]="{color:student.science>=35?'green':'red'}">{{student.science}}</td> -->
-                    <td [ngStyle]="{'background-color':content.percentage>=45?'green':'red'}">{{content.percentage}}</td>
-                     <td>{{content.id}}</td>
+                    <td [ngStyle]="{'background-color':content.percentage>=45?'green':'red'}">
+                        percentage:{{content.percentage}}
+                         class:{{content.class}}
+                        year:{{content.year}}
+                    </td>
+                    <td>{{content.id}}</td>
                     <td>{{content.email}}</td>
                     <td>{{content.password}}</td>
-                    <td>{{content.fathername}}</td>
-                    <td>{{content.address.addressline}}</td>
-                    <td>{{content.address.city}}</td>
-                    <td>{{content.address.state}}</td>
-                    <td>{{content.address.pincode}}</td>
-                    <td>{{content.dateofbirth}}</td>
-                    <td>{{content.type}}</td>
-                    <td>{{content.busfee}}</td>
-                    <td>{{content.hostelfee}}</td>
-                    
-        
+                    <td>{{content.fatherName}}</td>
+                    <td>{{content.address.addressline}}
+                        {{content.address.city}}
+                        {{content.address.state}}
+                        {{content.address.pincode}}
+                    </td>
+                    <td>{{content.dateofbirth | date:'dd-MM-yyyy'}}</td>
+                    <td><span>Type:</span>{{content.type}}
+                      <span>BusFee:</span>{{content.busfee}}
+                       <span>HostelFee:</span>{{content.hostelfee}}</td>
+
+
                     <td>
                         <button class="btn btn-warning" (click)="view(content.id)">View</button>
                         <button class="btn btn-info" (click)="edit(content.id)">Edit</button>

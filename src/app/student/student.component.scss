@@ -13,3 +13,24 @@ h1{
     color:hsl(23, 100%, 50%);
     text-decoration: underline solid goldenrod;
 }
+label{
+    padding-left:50px;
+    font-size: large;
+    font-weight: 700;
+}
+th{
+    background-color: rgb(24, 241, 190);
+    padding:10px;
+
+}
+td{
+    border:1px solid black;
+}
+th{
+    border:1px solid black; 
+}
+span{
+    color:#d12e0d;
+    font-size: large;
+    font-weight: 700;
+}
