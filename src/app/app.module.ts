@@ -11,7 +11,9 @@ import { HomeComponent } from './home/home.component';
 import { CreateStudentComponent } from './create-student/create-student.component';
 import { StudentComponent } from './student/student.component';
 import { HttpClientModule } from '@angular/common/http';
-import { StudentDetailsComponent } from './student-details/student-details.component'
+import { StudentDetailsComponent } from './student-details/student-details.component';
+import { PricePipe } from './price.pipe';
+import { PercentagePipe } from './percentage.pipe'
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { StudentDetailsComponent } from './student-details/student-details.compo
     HomeComponent,
     CreateStudentComponent,
     StudentComponent,
-    StudentDetailsComponent
+    StudentDetailsComponent,
+    PricePipe,
+    PercentagePipe
   ],
   imports: [
     BrowserModule,
