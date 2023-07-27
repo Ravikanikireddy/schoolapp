@@ -13,7 +13,8 @@ import { StudentComponent } from './student/student.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { PricePipe } from './price.pipe';
-import { PercentagePipe } from './percentage.pipe'
+import { PercentagePipe } from './percentage.pipe';
+import { ImpDirective } from './imp.directive'
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PercentagePipe } from './percentage.pipe'
     StudentComponent,
     StudentDetailsComponent,
     PricePipe,
-    PercentagePipe
+    PercentagePipe,
+    ImpDirective
   ],
   imports: [
     BrowserModule,
